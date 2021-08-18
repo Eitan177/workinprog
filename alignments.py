@@ -16,6 +16,9 @@ import gzip
 import shutil
 from itertools import islice
 import pandas as pd
+
+import umap.umap_ as umap
+
 import umap
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_samples, silhouette_score
