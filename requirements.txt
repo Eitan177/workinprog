@@ -91,7 +91,6 @@ pyarrow==5.0.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
-pycurl==7.43.0.5
 pydeck==0.6.2
 Pygments==2.9.0
 pyimgur==0.6.0
