@@ -136,8 +136,8 @@ if seq_file is not None:
     #st.plotly_chart(fig)
     ncuse = st.selectbox('Number of clusters based on length', [1,2,3],2)
     clusters, centroids = kmeans1d.cluster(hist_data,ncuse)
-    clusterer=PCA(n_components=2)
-    alntrans=clusterer.fit_transform(match_vector)
+    #clusterer=PCA(n_components=2)
+    #alntrans=clusterer.fit_transform(match_vector)
     #pced=pd.DataFrame(alntrans,columns=['0','1'])
     pced=pd.DataFrame({'seq': np.repeat(seqkeep['seq'],seqkeep['size'])})
    
@@ -186,7 +186,7 @@ if seq_file is not None:
         for predseq in gseq['seq']:
             if countercc % 100 == 0:
                 p_bar.progress(countercc/gseq.shape[0])
-                st.write(countercc)
+                
 
             mmm[predseq]=pairwise2.align.localxx(predseq,clone)[0]
             bb=format_alignment(*mmm[predseq],full_sequences=True).split('\n')  
