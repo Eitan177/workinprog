@@ -31,6 +31,7 @@ import plotly.figure_factory as ff
 import kmeans1d
 import seaborn as sns
 import re
+from Bio.Seq import Seq
 seq_file = st.file_uploader("Upload FASTA File",type = [".fastq"])
 
 
@@ -42,6 +43,10 @@ clone = st.text_input("Clone sequence ",\
 
 clone=re.sub('[ ]',"",clone)
 clone=re.sub('\n','',clone) 
+
+to_rev_complement=st.radio('reverse complement input',['No','Yes'])
+if to_rev_complement == 'Yes':
+    clone=str(Seq(clone).reverse_complement())
 st.write('input clone sequence is: '+clone)
 # Python3 code to demonstrate working of
 # Overlapping consecutive K splits
